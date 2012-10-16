@@ -1,6 +1,12 @@
 #!/bin/bash -e
 
-BOOST_DIR=${HOME}/dev/lib/boost_1_36_0/
+BOOST_DIR=boost_1_36_0
+BOOST_URL='http://iweb.dl.sourceforge.net/project/boost/boost/1.36.0/boost_1_36_0.tar.bz2'
+
+if [[ ! -d $BOOST_DIR ]]; then
+    curl BOOST_URL | tar xf
+fi
+
 YASMIC_DIR=.
 
 source ccfiles.sh
